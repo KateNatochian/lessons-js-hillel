@@ -1,9 +1,10 @@
-let A = [];
+let A = [3, 3, 3];
 
 function fillArray(A, a) {  
-  for (let i = 0; i < a; i++) {
-    A.push(Math.floor(Math.random() * 10));
+  let B = new Array();
+  for (let i = 0; i < a - A.length; i++) {
+    B.push(Math.floor(Math.random() * 10));
   }
-  return A;
+  return A.concat(B);
 }
 console.log(fillArray(A, 20));

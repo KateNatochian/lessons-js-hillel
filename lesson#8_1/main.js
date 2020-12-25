@@ -3,7 +3,7 @@ let B = [43, 33, 56, 18];
 let D = [38, 66, 89, 23];
 
 function getMaxs(A, B, D) {
-  let maxArray = [];
+  let maxArray;
   function max(array) {
     if (Array.isArray(array)) {
       let maxValue = array[0];
@@ -15,10 +15,7 @@ function getMaxs(A, B, D) {
       return maxValue;
     }
   }
-  let arrArrs = [A, B, D];
-  for (let i = 0; i < arrArrs.length; i++) {
-    maxArray.push(max(arrArrs[i]));
-  }
+  maxArray = max(A) + ', ' + max(B) + ', ' + max(D);
 
   return maxArray;
 }

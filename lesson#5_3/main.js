@@ -30,15 +30,6 @@ function doMath(x, znak, y) {
   
   return result;
   }
-  // let result;
-  // switch (znak) {
-  //   case '+':
-  //     result = x + y;
-  //     break;
-  //   case '-':
-  //     result = x - y;
-  //     break;
-  // }
-  // return result;
+  
   
 

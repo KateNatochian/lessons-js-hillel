@@ -1,7 +1,7 @@
 console.log('start');
 
-let m = 4;
-let n = 4;
+let m = 10;
+let n = 10;
 
 let arrayA = new Array(m);
 for (let i = 0; i < arrayA.length; i++){

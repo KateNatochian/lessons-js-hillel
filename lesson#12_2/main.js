@@ -1,6 +1,8 @@
 window.addEventListener('load', function(){
     const square = document.querySelector('.square');
     let newLeft;
+    const elem = document.querySelector('.elem');
+    elem.hidden = true;
 
     function eventHandler(event){
         // console.log(event.type, event);
@@ -38,11 +40,15 @@ window.addEventListener('load', function(){
         //right side
         if(square.offsetLeft + square.offsetWidth >= window.innerWidth){
             square.style.left = window.innerWidth - square.offsetWidth - 2 + 'px';
+            elem.hidden = false;
+            setTimeout(() => elem.hidden = true, 2000);
             return false;
         }
         // left side
         if(square.offsetLeft <= 0){
             square.style.left = 2 + 'px';
+            elem.hidden = false;
+            setTimeout(() => elem.hidden = true, 2000);
             return false;
         }
         return true;

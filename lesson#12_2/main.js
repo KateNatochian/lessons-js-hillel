@@ -1,11 +1,14 @@
 window.addEventListener('load', function(){
     const square = document.querySelector('.square');
+
     let newLeft;
+    let newTop;
+
     const elem = document.querySelector('.elem');
     elem.hidden = true;
-
+    
     function eventHandler(event){
-        // console.log(event.type, event);
+        console.log(event.type, event);
         if(!isBlockInWindow()){   
             return true;
         }
@@ -18,19 +21,37 @@ window.addEventListener('load', function(){
             } else{
                 newLeft = parseInt(square.style.left)+1;
             }
-            square.style.left = `${newLeft+2}px`;
-            
+            square.style.left = ${newLeft+2}px;
         }
         // move left
-      if (event.type == 'keydown' && event.keyCode == 37) {
-        console.log(square.style.left)
-        if (square.style.left == '') {
-          newLeft = window.innerWidth / 2;
-        } else {
-          newLeft = parseInt(square.style.left) - 1;
-        }
-        square.style.left = `${newLeft - 2}px`;
-            
+        if(event.type == 'keydown' && event.keyCode == 37){
+            console.log(square.style.left)
+            if(square.style.left == ''){
+                newLeft =  window.innerWidth/2;
+            } else{
+                newLeft = parseInt(square.style.left)-1;
+            }
+            square.style.left = ${newLeft-2}px;
+        }  
+        // move top
+        if(event.type == 'keydown' && event.keyCode == 38){
+            console.log(square.style.top)
+            if(square.style.top == ''){
+                newTop =  window.innerHeight/2;
+            } else{
+                newTop = parseInt(square.style.top)-1;
+            }
+            square.style.top = ${newTop-2}px;
+        }  
+        //move bottom
+        if(event.type == 'keydown' && event.keyCode == 40){
+            console.log(square.style.top)
+            if(square.style.top == ''){
+                newTop =  window.innerHeight/2;
+            } else{
+                newTop = parseInt(square.style.top)+1;
+            }
+            square.style.top = ${newTop+2}px;
         }  
     }
     document.addEventListener('keydown', eventHandler);
@@ -51,6 +72,22 @@ window.addEventListener('load', function(){
             setTimeout(() => elem.hidden = true, 2000);
             return false;
         }
+        // top side
+        if(square.offsetTop <= 0){
+            square.style.top = 2 + 'px';
+            elem.hidden = false;
+            setTimeout(() => elem.hidden = true, 2000);
+            return false;
+        }
+        
+        // bottom side
+        if(square.offsetTop + square.offsetHeight >= window.innerHeight){
+            square.style.top = window.innerHeight - square.offsetHeight - 2 + 'px';
+            elem.hidden = false;
+            setTimeout(() => elem.hidden = true, 2000);
+            return false;
+        }
+
         return true;
     }
 });

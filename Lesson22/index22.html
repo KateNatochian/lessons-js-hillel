@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .solid{
+            border: 2px solid black;
+        }
+        .block{
+            width: 100px;
+            height: 100px;
+            
+        }
+        .blockButton {
+            margin-top: 50px;
+        }
+        .counter{
+            margin-top: 20xp;
+        }
+        .products{
+            display: flex;
+        }
+        .product{
+            height: 200px;
+            width: 120px;
+            border-radius: 20px;
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product__name{
+            text-align: center;
+            margin-top: 10px;
+        }
+        .product__cost{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .product__image{
+            width: 100%;
+        }
+        .carts{
+            display: flex;
+        }
+        .cart_amount{
+            width: 200px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product_add{
+            /* margin-top: 10px; */
+        }
+        .product_remove{
+            margin-top: 5px;
+            margin-left: -5px;
+        }
+        .ttl{
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .total_cart_amount{
+            margin-right: 20px;
+        }
+        
+
+    </style>
+    <script src="./main22.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="products"></div>
+    <hr>
+    <div class="carts">
+        <div class="cart_amount"> 
+            <div>Total amount: <span id="total">0</span></div>
+            <div> Quantity Title 1: <span id="qty">0</span></div> 
+        </div>
+        <div class="cart_amount"> 
+            <div>Total amount: <span id="total">0</span></div>
+            <div> Quantity Title 2: <span id="qty">0</span></div> 
+        </div>
+    </div>
+    <hr>
+    <div class="ttl">
+        <div class="total_cart_amount">Grand Total: <span id="grand_total">0</span></div>
+        <div>
+            <select name="currencyCont" id="currencyCont">
+                <option class="currency" value="UAH" data-curr-id="UAH" selected>UAH</option>
+                <option class="currency" value="USD" data-curr-id="USD">USD</option>
+                <option class="currency" value="EUR" data-curr-id="EUR">EUR</option>   
+            </select>
+        </div>
+    </div>
+    <hr>
+    
+    
+</body>
+</html>
